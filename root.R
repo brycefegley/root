@@ -7,10 +7,11 @@ rm(list=ls())
 # x_(n+1) = (p-1)*x_n/p + S/(p * x_n^(p-1)) 
 
 root <- function(S, p, x=1, tol=1e-7) {
-  # S: number for which the ith root is sought
+  # S: number for which the ith root is sought (must be positive)
   # i: root 
   # x: starting guess
   
+  if (S < 0) stop("You're imagining things!")
   i <- 2
   # Also create an absolute value function for sake of it
   ABS <- function(x) if (x < 0) x * -1 else x
