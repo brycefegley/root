@@ -15,7 +15,7 @@ root <- function(S, p, x=1, tol=1e-7) {
   i <- 2
   # Also create an absolute value function for sake of it
   ABS <- function(x) ifelse(x < 0, -x, x)
-  x <- as.vector(x)
+  x <- vector()
   x[i] <- (p-1) * x[i-1]/p + S/(p * x[i-1]^(p-1))
   while (ABS(x[i] - x[i-1])/S > tol) {
     x[i+1] <- (p-1) * x[i]/p + S/(p * x[i]^(p-1))
