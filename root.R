@@ -8,7 +8,7 @@ rm(list=ls())
 
 root <- function(S, p, x=1, tol=1e-7) {
   # S: number for which the ith root is sought (must be positive)
-  # i: root 
+  # p: root 
   # x: starting guess
   
   if (S < 0) stop("You're imagining things!")
